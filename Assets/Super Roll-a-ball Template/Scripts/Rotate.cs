@@ -2,13 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Rotate a rigidbody by a given speed. This can be used to affect the player ball.
-/// If the speed is fast, you may need to change the collision detection on the rigidbody to continuous.
-/// There is a good chance you want to set the rigidbdy to kinematic and turn off gravity.
-/// But I'm leaving that up to the designer just in case.
-/// </summary>
-
 [RequireComponent(typeof(Rigidbody))]
 public class Rotate : MonoBehaviour
 {
