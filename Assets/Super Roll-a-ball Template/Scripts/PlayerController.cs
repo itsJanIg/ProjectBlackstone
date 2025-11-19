@@ -6,13 +6,23 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 10;
+    public float jumpForce = 50;
     public Rigidbody rb;
     Vector2 moveInputVector;
+    bool isGrounded = true;
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInputVector = context.ReadValue<Vector2>();
-       // Debug.Log("OnMove called!" + moveInputVector);
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed && isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
     }
 
     private void FixedUpdate()
@@ -22,7 +32,13 @@ public class PlayerController : MonoBehaviour
         var cameraRelativeInput = camRotationFlattened * movementInput;
 
         Vector3 force = new Vector3(cameraRelativeInput.x * speed, 0, cameraRelativeInput.z * speed);
-        rb.AddForce(force);        
+        rb.AddForce(force);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Simple ground detection
+        if (collision.contacts[0].normal.y > 0.5f)
+            isGrounded = true;
+    }
 }
