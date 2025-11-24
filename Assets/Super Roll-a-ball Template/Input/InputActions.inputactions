@@ -265,11 +265,11 @@
                 },
                 {
                     "name": "",
-                    "id": "e71c1f5e-e399-4284-af0c-f9b98d956b5a",
+                    "id": "8576c952-c522-4d86-8de8-5452a10946fc",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse;Gamepad;Touch;XR",
+                    "groups": "",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
