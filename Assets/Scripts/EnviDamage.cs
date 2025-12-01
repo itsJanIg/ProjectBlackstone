@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AcidDamage : MonoBehaviour
+public class EnviDamage : MonoBehaviour
 {
     public float damagePerTick = 5f;
     public float damageInterval = 1f;
