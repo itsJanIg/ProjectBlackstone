@@ -10,7 +10,8 @@ public class KillPlayerBelowYPosition : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindObjectOfType<PlayerController>().gameObject;
+        player = UnityEngine.Object.FindFirstObjectByType<PlayerController>().gameObject;
+
     }
 
     void Update()
